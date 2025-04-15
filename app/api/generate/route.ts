@@ -23,16 +23,9 @@ export async function POST(req: Request) {
     const response = await client.images.generate({
       model: 'black-forest-labs/flux-dev',
       response_format: 'url',
-      extra_body: {
-        response_extension: 'webp',
-        width: 1024,
-        height: 1024,
-        num_inference_steps: 28,
-        negative_prompt: '',
-        seed: -1,
-      },
       prompt: prompt,
     });
+    
 
     console.log('image generated', response);
 
